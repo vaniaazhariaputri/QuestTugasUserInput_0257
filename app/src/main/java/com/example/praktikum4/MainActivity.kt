@@ -90,4 +90,17 @@ fun BiodataScreen(
     modifier: Modifier = Modifier,
     innerPadding: PaddingValues = PaddingValues()
 ) {
+    var firstName by remember { mutableStateOf("") }
+    var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var birthDate by remember { mutableStateOf("") }
+    var experience by remember { mutableStateOf("") }
+    var showDatePicker by remember { mutableStateOf(false) }
+    var expanded by remember { mutableStateOf(false) }
+
+    val skills = listOf(
+        stringResource(R.string.skill_android),
+        stringResource(R.string.skill_uiux),
+        stringResource(R.string.skill_web)
+    )
     }
