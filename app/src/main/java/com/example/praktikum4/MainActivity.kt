@@ -108,3 +108,10 @@ fun BiodataScreen(
     val datePattern = stringResource(R.string.date_pattern)
     val timeZoneId = stringResource(R.string.timezone_utc)
 
+    val isFormValid = firstName.isNotBlank() &&
+            lastName.isNotBlank() &&
+            email.isNotBlank() &&
+            birthDate.isNotBlank() &&
+            experience.isNotBlank() &&
+            selectedSkills.isNotEmpty()
+
