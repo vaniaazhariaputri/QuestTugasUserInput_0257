@@ -208,3 +208,29 @@ fun BiodataScreen(
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
                 )
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
+                // Tanggal lahir & experience
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(
+                        dimensionResource(R.dimen.space_small)
+                    )
+                ) {
+                    OutlinedTextField(
+                        value = birthDate,
+                        onValueChange = {},
+                        readOnly = true,
+                        placeholder = { Text(stringResource(R.string.hint_birth_date)) },
+                        trailingIcon = {
+                            IconButton(onClick = { showDatePicker = true }) {
+                                Icon(
+                                    imageVector = Icons.Default.DateRange,
+                                    contentDescription = stringResource(R.string.cd_calendar)
+                                )
+                            }
+                        },
+                        shape = fieldShape,
+                        singleLine = true,
+                        modifier = Modifier.weight(1f)
+                    )
+
