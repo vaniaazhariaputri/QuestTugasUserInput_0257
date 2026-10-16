@@ -323,3 +323,33 @@ fun BiodataScreen(
         }
     }
 
+    // Dialog pemilih tanggal
+    if (showDatePicker) {
+        val dateState = rememberDatePickerState()
+        DatePickerDialog(
+            onDismissRequest = { showDatePicker = false },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        dateState.selectedDateMillis?.let { millis ->
+                            val formatter = SimpleDateFormat(datePattern, Locale.getDefault())
+                            formatter.timeZone = TimeZone.getTimeZone(timeZoneId)
+                            birthDate = formatter.format(Date(millis))
+                        }
+                        showDatePicker = false
+                    }
+                ) {
+                    Text(stringResource(R.string.dialog_ok))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDatePicker = false }) {
+                    Text(stringResource(R.string.dialog_cancel))
+                }
+            }
+        ) {
+            DatePicker(state = dateState)
+        }
+    }
+}
+
