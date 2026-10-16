@@ -151,3 +151,11 @@ fun BiodataScreen(
                 defaultElevation = dimensionResource(R.dimen.card_elevation)
             )
         ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+                    .padding(dimensionResource(R.dimen.card_padding))
+                    .padding(bottom = innerPadding.calculateBottomPadding()),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
