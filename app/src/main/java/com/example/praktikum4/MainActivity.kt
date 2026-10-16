@@ -269,3 +269,33 @@ fun BiodataScreen(
                 }
                 Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
 
+                // Pilihan skill
+                Text(
+                    text = stringResource(R.string.label_skill),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = spResource(R.dimen.text_label),
+                    modifier = Modifier.align(Alignment.Start)
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    skills.forEach { skill ->
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(
+                                checked = skill in selectedSkills,
+                                onCheckedChange = { checked ->
+                                    if (checked) selectedSkills.add(skill)
+                                    else selectedSkills.remove(skill)
+                                }
+                            )
+                            Text(
+                                text = skill,
+                                fontSize = spResource(R.dimen.text_checkbox)
+                            )
+                        }
+                    }
+                }
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
