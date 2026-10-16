@@ -6,4 +6,5 @@
     <color name="black">#000000</color>
     <color name="gray_text">#757575</color>
     <color name="gray_border">#9E9E9E</color>
+    <color name="gray_button_disabled">#E0E0E0</color>
 </resources>
