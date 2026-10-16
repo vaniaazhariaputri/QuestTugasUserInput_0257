@@ -159,3 +159,18 @@ fun BiodataScreen(
                     .padding(bottom = innerPadding.calculateBottomPadding()),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(
+                    text = stringResource(R.string.title_form),
+                    color = colorResource(R.color.purple_title),
+                    fontSize = spResource(R.dimen.text_title),
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_small)))
+                Text(
+                    text = stringResource(R.string.subtitle_form),
+                    color = colorResource(R.color.gray_text),
+                    fontSize = spResource(R.dimen.text_subtitle),
+                    textAlign = TextAlign.Center
+                )
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
