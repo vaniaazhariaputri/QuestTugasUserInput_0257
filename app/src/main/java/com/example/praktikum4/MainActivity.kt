@@ -115,3 +115,23 @@ fun BiodataScreen(
             experience.isNotBlank() &&
             selectedSkills.isNotEmpty()
 
+    val fieldShape = RoundedCornerShape(dimensionResource(R.dimen.field_corner))
+
+    // Box induk: header di belakang, Card mengapung di atasnya
+    Box(modifier = modifier.fillMaxSize()) {
+
+        // Header gradien (warna dari resources)
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(dimensionResource(R.dimen.header_height))
+                .background(
+                    Brush.verticalGradient(
+                        colors = listOf(
+                            colorResource(R.color.purple_title),
+                            colorResource(R.color.purple_primary)
+                        )
+                    )
+                )
+        )
+
