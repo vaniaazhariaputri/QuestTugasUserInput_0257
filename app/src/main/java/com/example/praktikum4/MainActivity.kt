@@ -188,3 +188,23 @@ fun BiodataScreen(
                         singleLine = true,
                         modifier = Modifier.weight(1f)
                     )
+                    OutlinedTextField(
+                        value = lastName,
+                        onValueChange = { lastName = it },
+                        placeholder = { Text(stringResource(R.string.hint_last_name)) },
+                        shape = fieldShape,
+                        singleLine = true,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
+                // Email
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    placeholder = { Text(stringResource(R.string.hint_email)) },
+                    shape = fieldShape,
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
