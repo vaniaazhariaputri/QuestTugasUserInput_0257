@@ -234,3 +234,20 @@ fun BiodataScreen(
                         modifier = Modifier.weight(1f)
                     )
 
+                    ExposedDropdownMenuBox(
+                        expanded = expanded,
+                        onExpandedChange = { expanded = it },
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        OutlinedTextField(
+                            value = experience,
+                            onValueChange = {},
+                            readOnly = true,
+                            placeholder = { Text(stringResource(R.string.hint_experience)) },
+                            trailingIcon = {
+                                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
+                            },
+                            shape = fieldShape,
+                            singleLine = true,
+                            modifier = Modifier.menuAnchor()
+                        )
