@@ -80,4 +80,14 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-}
+@Composable
+private fun spResource(@DimenRes id: Int): TextUnit =
+    with(LocalDensity.current) { dimensionResource(id).toSp() }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BiodataScreen(
+    modifier: Modifier = Modifier,
+    innerPadding: PaddingValues = PaddingValues()
+) {
+    }
