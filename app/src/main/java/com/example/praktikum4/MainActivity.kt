@@ -251,3 +251,21 @@ fun BiodataScreen(
                             singleLine = true,
                             modifier = Modifier.menuAnchor()
                         )
+                        ExposedDropdownMenu(
+                            expanded = expanded,
+                            onDismissRequest = { expanded = false }
+                        ) {
+                            experienceList.forEach { item ->
+                                DropdownMenuItem(
+                                    text = { Text(item) },
+                                    onClick = {
+                                        experience = item
+                                        expanded = false
+                                    }
+                                )
+                            }
+                        }
+                    }
+                }
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
