@@ -353,3 +353,10 @@ fun BiodataScreen(
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun BiodataScreenPreview() {
+    Praktikum4Theme {
+        BiodataScreen()
+    }
+}
