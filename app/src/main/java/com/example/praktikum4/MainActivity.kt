@@ -63,4 +63,21 @@ import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
 
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            Praktikum4Theme {
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    containerColor = colorResource(R.color.screen_background)
+                ) { innerPadding ->
+                    BiodataScreen(innerPadding = innerPadding)
+                }
+            }
+        }
+    }
+}
+
 }
